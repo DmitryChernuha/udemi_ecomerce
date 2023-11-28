@@ -1,13 +1,10 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
 
 from products import views
 
+app_name = 'products'
+
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('products/', views.products, name='products'),
+    path('', views.products, name='index'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
